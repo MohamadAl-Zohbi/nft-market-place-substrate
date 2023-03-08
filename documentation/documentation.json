@@ -1,0 +1,2905 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CEX EXCHANGER",
+    "description": "Service to provide the communication between frontend functionality and the database.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Users",
+      "description": "users api"
+    },
+    {
+      "name": "Tokens",
+      "description": "Tokens api"
+    },
+    {
+      "name": "Admin",
+      "description": "Admin api"
+    },
+    {
+      "name": "Content",
+      "description": "Content api"
+    },
+    {
+      "name": "Country",
+      "description": "Country api"
+    },
+    {
+      "name": "Index",
+      "description": "Index api"
+    },
+    {
+      "name": "Login",
+      "description": "Login api"
+    },
+    {
+      "name": "Pairs-price",
+      "description": "Pairs-price api"
+    },
+    {
+      "name": "Settings",
+      "description": "Settings api"
+    },
+    {
+      "name": "Token-pairs",
+      "description": "Token-pairs api"
+    },
+    {
+      "name": "Transactions",
+      "description": "Transactions api"
+    },
+    {
+      "name": "User-Balance",
+      "description": "User-Balance api"
+    },
+    {
+      "name": "User-liquidity-balance",
+      "description": "User-liquidity-balances api"
+    },
+    {
+      "name": "Verification-document",
+      "description": "Verification-document api"
+    },
+    {
+      "name": "Withdraws",
+      "description": "Withdraws api"
+    },
+    {
+      "name": "Benefits",
+      "description": "Benefits api"
+    },
+    {
+      "name": "Active-order",
+      "description": "Active order api"
+    },
+    {
+      "name": "Faq",
+      "description": "Faq api"
+    },
+    {
+      "name": "Order-book",
+      "description": "Order book api"
+    }
+  ],
+  "paths": {
+    "/admin/login": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "User Login admin API",
+        "description": "It is an API login admin that takes the email and the password and return the token if the data are true.",
+        "parameters": [
+          {
+            "name": "password",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/content/add-content": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "Side section",
+        "description": "It",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "adminId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/content/update": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "Update the info in the specific content",
+        "description": "it uses the content id to endicate which content i wanna update, it could update the title, the page and the slag.",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contentId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/content/all": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "get all content",
+        "description": "get all content",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/content/{id}": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "get content by id",
+        "description": "get all info to content using its content-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/content/{slug}": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "get content by slug",
+        "description": "get all info to content using its slug",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/content/delete/{id}": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "summary": "delete content by id",
+        "description": "delete specific content using its content-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/country/create": {
+      "post": {
+        "tags": [
+          "Admin",
+          "Country"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/country/all": {
+      "get": {
+        "tags": [
+          "Admin",
+          "Country"
+        ],
+        "summary": "get all country",
+        "description": "get all country",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/country/{id}": {
+      "get": {
+        "tags": [
+          "Country"
+        ],
+        "summary": "get country by id",
+        "description": "get specific content using its country-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/country/delete/{id}": {
+      "get": {
+        "tags": [
+          "Country"
+        ],
+        "summary": "get country by id",
+        "description": "get specific content using its country-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/login/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "summary": "User Login user API",
+        "description": "It is an API login user that takes the email and the password and return the token if the data are true.",
+        "parameters": [
+          {
+            "name": "password",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/login/email-verification": {
+      "get": {
+        "tags": [
+          "Login"
+        ],
+        "summary": "it sends verification after sign up",
+        "description": "It is an API that sends the verification email to the user after sign up ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/pairs-price/get-price-boundy": {
+      "post": {
+        "tags": [
+          "Pairs-price-boundy"
+        ],
+        "summary": "get boundy price",
+        "description": "get boundy price for today",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tokenId": {
+                    "example": "any"
+                  },
+                  "pairsId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs-price/get-average-price": {
+      "post": {
+        "tags": [
+          "Pairs-price-average"
+        ],
+        "summary": "get average price",
+        "description": "get average price for today",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "pairsId": {
+                    "example": "any"
+                  },
+                  "tokenId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs-price/get-average-change": {
+      "post": {
+        "tags": [
+          "Pairs-price-average-change"
+        ],
+        "summary": "get average change",
+        "description": "get change percentage of average price between today and yesterday",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "pairsId": {
+                    "example": "any"
+                  },
+                  "tokenId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs-price/all": {
+      "get": {
+        "tags": [
+          "Pairs-price",
+          "Admin"
+        ],
+        "summary": "get all Pairs-price",
+        "description": "get all Pairs-price",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/pairs-price/with-relations/{id}": {
+      "get": {
+        "tags": [
+          "Pairs-price"
+        ],
+        "summary": "get Pairs-price by token_pairs_id",
+        "description": "get specific Pairs-price using its token_pairs_id relation from token-price entity",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/pairs-price/{id}": {
+      "get": {
+        "tags": [
+          "Pairs-price"
+        ],
+        "summary": "get Pairs-price by id",
+        "description": "get specific Pairs-price using its Pairs-price-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/settings/update": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "update Settings",
+        "description": "It is an API to update Settings using its support_email, contact_number, node_url",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "supportEmail",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contactNumber",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nodeUrl",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/settings/{id}": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "get Settings by id",
+        "description": "get specific Settings using its id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token/create": {
+      "post": {
+        "tags": [
+          "Tokens",
+          "Admin"
+        ],
+        "summary": "Create new token ",
+        "description": "It is an API to create new token by admin and the api will check if this login is for admin or not",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/token/update": {
+      "post": {
+        "tags": [
+          "Tokens",
+          "Admin"
+        ],
+        "summary": "Edit token by id",
+        "description": "It is an API to edit token by admin and the api will check if this login is for admin or not",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token/all": {
+      "get": {
+        "tags": [
+          "Tokens"
+        ],
+        "summary": "get all tokens",
+        "description": "It is an API to get all tokens",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token/{id}": {
+      "get": {
+        "tags": [
+          "Tokens"
+        ],
+        "summary": "get token by id",
+        "description": "It is an API to get a specific token by his id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token/delete/{id}": {
+      "get": {
+        "tags": [
+          "Tokens",
+          "Admin"
+        ],
+        "summary": "delete token by id",
+        "description": "It is an API to delete a specific token by his id by admin and the api will check if this login is for admin or not",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token-pairs/create": {
+      "post": {
+        "tags": [
+          "Token-pairs",
+          "Admin"
+        ],
+        "summary": "create pair from 2 token",
+        "description": "its api that gives the permission for create pair of two token ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "firstTokenId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "secondTokenId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/token-pairs/all": {
+      "get": {
+        "tags": [
+          "Token-pairs"
+        ],
+        "summary": "bring exchangable tokens",
+        "description": "its api that brings all token able to be exchanged",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token-pairs/all-with-relation": {
+      "get": {
+        "tags": [
+          "Token-pairs"
+        ],
+        "summary": "bring exchangable tokens",
+        "description": "its api that brings all token able to be exchanged",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token-pairs/all-with-relation-and-balance": {
+      "get": {
+        "tags": [
+          "Token-pairs"
+        ],
+        "summary": "bring exchangable tokens",
+        "description": "its api that brings all token able to be exchanged",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token-pairs/get-top-ten-pairs": {
+      "get": {
+        "tags": [
+          "Token-pairs"
+        ],
+        "summary": "bring top 10 exchangable tokens",
+        "description": "its api that brings the top 10 tokens that has ability to be exchanged",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token-pairs/trade": {
+      "post": {
+        "tags": [
+          "Token-pairs"
+        ],
+        "summary": "make the exchanging between two token ",
+        "description": "its api that make the trading between two tokens",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pairsId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "amount",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "tokenToExchaneg",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/token-pairs/get-pairs-info/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/token-pairs/{id}": {
+      "get": {
+        "tags": [
+          "Token-pairs"
+        ],
+        "summary": "bring one exchangable tokens using id",
+        "description": "its api that brings one token that has ability to be exchanged using id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/transactions/all": {
+      "get": {
+        "tags": [
+          "Transactions",
+          "Admin"
+        ],
+        "summary": "get user transacctions",
+        "description": "It is an API to get all trasnactions for user and the api will check the user token ",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/transactions/allWithRellation": {
+      "get": {
+        "tags": [
+          "Transactions",
+          "Admin"
+        ],
+        "summary": "get user transacctions",
+        "description": "It is an API to get all trasnactions for user and the api will check the user token ",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/transactions/get-user-transactions/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/transactions/get-user-transactions/": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/transactions/get-pairs-transactions": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "pairsId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/get-today-transactions": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/transactions/get-today-transactions-token": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tokenId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transactions/get-transactions-count": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/transactions/{id}": {
+      "get": {
+        "tags": [
+          "Transactions",
+          "Admin"
+        ],
+        "summary": "get user transacction by id",
+        "description": "It is an API to get all trasnaction for user by id and the api will check the user token ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/transactions/with-relations/{id}": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "get user transacctions with realtions",
+        "description": "It is an API to get all trasnactions with relations data for user and the api will check the user token ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/user/signup": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Signup user",
+        "description": "It is an API Sign up user that takes all require info to user",
+        "parameters": [
+          {
+            "name": "firstName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "profileImg",
+            "in": "formData",
+            "schema": {
+              "type": "file"
+            }
+          },
+          {
+            "name": "countryId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/useremail-verification": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "it sends verification after sign up",
+        "description": "It is an API that sends the verification email to the user after sign up ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/get-all-user-data": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/get-user-data": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/forgot-password": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/reset-password": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/change-password": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Reset Password",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "new_password",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/edit-info": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Edit info to user",
+        "description": "It is an API edit info to user that takes all require info to user and user id",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "firstName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "profileImg",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/get-all-users": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/get-user-count-per-country": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/get-userInfo/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user-balance/all": {
+      "get": {
+        "tags": [
+          "User-Balance",
+          "Admin"
+        ],
+        "summary": "Get user balance API",
+        "description": "Get all user Balances for all tokens",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user-balance/": {
+      "get": {
+        "tags": [
+          "User-Balance"
+        ],
+        "summary": "get user balance by id",
+        "description": "It is an API to get a specific user-balance by his id",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user-balance/my-balance": {
+      "get": {
+        "tags": [
+          "User-Balance"
+        ],
+        "summary": "get user balance by id with all token",
+        "description": "It is an API to get a specific user-balance by his id with all token",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user-balance/token-balances": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "example": "any"
+                  },
+                  "tokenId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/verification-document/all": {
+      "get": {
+        "tags": [
+          "Verification-document"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/verification-document/{id}": {
+      "get": {
+        "tags": [
+          "Verification-document"
+        ],
+        "summary": "get verification document by id",
+        "description": "It is an API to get verification document by id and the api will check the user token ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/verification-document/delete/{id}": {
+      "get": {
+        "tags": [
+          "Verification-document"
+        ],
+        "summary": "delete verification document by id",
+        "description": "It is an API to delete verification document by id and the api will check the user token ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/verification-document/with-relations/{id}": {
+      "get": {
+        "tags": [
+          "Verification-document"
+        ],
+        "summary": "get verification document by id with other relations data",
+        "description": "It is an API to get verification document by id with other relations data and the api will check the user token ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/withdraws/all": {
+      "get": {
+        "tags": [
+          "Withdraws",
+          "Admin"
+        ],
+        "summary": "get all withdraws",
+        "description": "It is an API to get all withdraws ",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/withdraws/user": {
+      "get": {
+        "tags": [
+          "Withdraws"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/withdraws/whitdraw": {
+      "post": {
+        "tags": [
+          "Withdraws"
+        ],
+        "summary": "withdraws amount of token to other acount",
+        "description": "It is an API to withdraws amount of token to other account in the website or on other website",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tokenId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "amount",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "to",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/withdraws/transfer": {
+      "post": {
+        "tags": [
+          "Withdraws"
+        ],
+        "summary": "transfer amount of token to other acount",
+        "description": "It is an API to transfer amount of token to other account in the website",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tokenId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "amount",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "to",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/withdraws/{id}": {
+      "get": {
+        "tags": [
+          "Withdraws",
+          "Admin"
+        ],
+        "summary": "get withdraws by id with other relations data",
+        "description": "It is an API to get withdraws by id with other relations data",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/user-liquidity-balance/get-user-liquidity-balances": {
+      "get": {
+        "tags": [
+          "User-liquidity-balance",
+          "Admin"
+        ],
+        "summary": "get user liquidity balance",
+        "description": "It is an API to get all user liquidity balance for user and the api will check the user token ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user-liquidity-balance/add": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user-liquidity-balance/remove/{id}": {
+      "get": {
+        "tags": [
+          "User-liquidity-balance",
+          "Admin"
+        ],
+        "summary": "delete user liquidity balance",
+        "description": "It is an API to delete user liquidity balance by id and the api will check the user token ",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/faq/all": {
+      "get": {
+        "tags": [
+          "Faq"
+        ],
+        "summary": "Get all FAQ",
+        "description": "it",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/faq/create": {
+      "post": {
+        "tags": [
+          "Faq",
+          "Admin"
+        ],
+        "summary": "Add FAQ",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "question",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "answer",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/faq/edit": {
+      "post": {
+        "tags": [
+          "Faq",
+          "Admin"
+        ],
+        "summary": "Edit FAQ",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "question",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "answer",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/faq/delete/{id}": {
+      "get": {
+        "tags": [
+          "Faq",
+          "Admin"
+        ],
+        "summary": "Delete FAQ",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "question",
+            "in": "params",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/active-order/all": {
+      "get": {
+        "tags": [
+          "Active-order",
+          "Admin"
+        ],
+        "summary": "Get all active orders",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/active-order/user-active-orders": {
+      "get": {
+        "tags": [
+          "Active-order",
+          "User"
+        ],
+        "summary": "Get user active orders",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/active-order/book-active-orders": {
+      "post": {
+        "tags": [
+          "Active-order",
+          "Admin"
+        ],
+        "summary": "Get all active orders and book orders",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/active-order/cancel-order": {
+      "post": {
+        "tags": [
+          "Active-order",
+          "User"
+        ],
+        "summary": "Delete active order",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "activeOrderId": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/active-order/add-order": {
+      "post": {
+        "tags": [
+          "Active-order",
+          "Admin"
+        ],
+        "summary": "Get all active orders and book orders",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/order-bookget-all-order-book": {
+      "get": {
+        "tags": [
+          "Order-book",
+          "Admin"
+        ],
+        "summary": "get all order book",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/order-book/user-order-book": {
+      "get": {
+        "tags": [
+          "Order-book",
+          "User"
+        ],
+        "summary": "Get user orders book",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/benefits/all": {
+      "get": {
+        "tags": [
+          "Benefits"
+        ],
+        "summary": "get all benefits",
+        "description": "it",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/benefits/add": {
+      "post": {
+        "tags": [
+          "Benefits",
+          "Admin"
+        ],
+        "summary": "Add benefit",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "img",
+            "in": "formData",
+            "schema": {
+              "type": "file"
+            }
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "text",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/benefits/delete": {
+      "post": {
+        "tags": [
+          "Benefits",
+          "Admin"
+        ],
+        "summary": "Add benefit",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "formData",
+            "schema": {
+              "type": "int"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/benefits/update": {
+      "post": {
+        "tags": [
+          "Benefits",
+          "Admin"
+        ],
+        "summary": "Edit benefit",
+        "description": "it",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BadRequestResponse": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BadRequest"
+          },
+          {
+            "$ref": "#/components/schemas/ErrorResponse"
+          }
+        ]
+      },
+      "BadRequest": {
+        "description": "API Validation error details",
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "x-obfuscate": false,
+            "items": {
+              "$ref": "#/components/schemas/BadRequestErrorDetail"
+            }
+          }
+        },
+        "required": [
+          "errors"
+        ]
+      },
+      "BadRequestErrorDetail": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "x-obfuscate": false
+          },
+          "dataPath": {
+            "type": "string",
+            "x-obfuscate": false
+          },
+          "schemaPath": {
+            "type": "string",
+            "x-obfuscate": false
+          },
+          "params": {
+            "type": "object",
+            "properties": {
+              "missingProperty": {
+                "type": "string",
+                "x-obfuscate": false
+              }
+            },
+            "x-obfuscate": false
+          },
+          "message": {
+            "type": "string",
+            "x-obfuscate": false
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "description": "Standard error response object.",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Message with error description.",
+            "x-obfuscate": false
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  }
+}

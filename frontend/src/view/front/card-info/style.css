@@ -1,0 +1,153 @@
+#card-info {
+  background: #0e0a38;
+}
+
+#card-info .title {
+  color: white;
+  font-style: italic;
+  font-size: 16px;
+  margin: 10px;
+}
+
+#card-info .nft-items {
+  padding-bottom: 40px;
+}
+
+#card-info .carousel {
+  margin: 20px 30px;
+}
+
+#card-info .card-content .img-section {
+  position: relative;
+  padding-top: 10px;
+  border: 2px solid #fb0;
+  border-radius: 15px;
+  margin: 0 10px;
+  background: #4B466B;
+  box-shadow: rgb(214 13 206) 0px 0px 25px 0px;
+  padding: 10px;
+}
+
+#card-info .card-content .img-section .box-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+  background: #0F0939;
+}
+
+#card-info .card-content .info-section {
+  margin: 0 20px;
+  width: 90%;
+}
+
+#card-info .card-content .info-section h1 {
+  color: var(--yellow-color);
+  font-style: italic;
+  font-size: 20px;
+  margin: 15px 0 10px;
+}
+
+#card-info .card-content .info-section .description {
+  color: white;
+  line-height: 20px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+#card-info .card-content .info-section .buy-section {
+  padding: 0 20px;
+}
+
+#card-info .card-content .info-section .buy-section h3 {
+  color: #FF0092;
+  font-size: 16px;
+  margin: 5px 0;
+  text-shadow: -2px 4px 8px rgba(0, 0, 0, 0.86);
+}
+
+#card-info .card-content .info-section .buy-section div span {
+  color: #00C4FF;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: -2px 4px 8px rgba(0, 0, 0, 0.86);
+}
+
+#card-info .card-content .info-section .buy-section img {
+  width: 20px;
+}
+
+#card-info .card-content .info-section .box {
+  background: #472C6A;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#card-info .card-content .info-section .box-head {
+  padding: 0 20px;
+  color: white;
+  border-bottom: 1px solid #7d649f;
+}
+
+#card-info .card-content .info-section .box .link {
+  margin: 10px;
+  font-weight: 500;
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+#card-info .card-content .info-section .box .section {
+  padding: 0 20px;
+}
+
+#card-info .card-content .info-section .box .section h5 {
+  margin: 10px 0 0;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#card-info .card-content .info-section .box .section1 h6 {
+  margin: 0;
+  color: #D3FF00;
+  font-size: 12px;
+  text-shadow: -2px 4px 8px rgba(0, 0, 0, 0.86);
+}
+
+#card-info .card-content .info-section .box .section2 h6 {
+  margin: 0;
+  color: #FF801F;
+  font-size: 12px;
+  text-shadow: -2px 4px 8px rgba(0, 0, 0, 0.86);}
+
+#card-info .card-content .info-section .box .section3 {
+  padding-bottom: 10px;
+}
+
+#card-info .card-content .info-section .box .section3 h6 {
+  margin: 0;
+  color: #0090FF;
+  font-size: 12px;
+  text-shadow: -2px 4px 8px rgba(0, 0, 0, 0.86);}
+
+#card-info .button-nft {
+  background-image: linear-gradient(var(--fushia-color) 0%, var(--violette-color) 100%);
+  box-shadow: 0px 0px 5px 1px #fff;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 5px 35px;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .3s;
+}
+
+@media (max-width: 450px) {
+  #card-info .button-nft {
+    font-size: 12px;
+    margin: 15px 0;
+  }
+  #card-info .card-content .info-section .buy-section {
+    padding: 0 ;
+}
+}

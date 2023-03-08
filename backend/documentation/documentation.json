@@ -1,0 +1,1444 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CEX EXCHANGER",
+    "description": "Service to provide the communication between frontend functionality and the database.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Users",
+      "description": "users api"
+    },
+    {
+      "name" : "Nft",
+      "description" : "nft api"
+    },
+    {
+      "name" : "collection",
+      "description" : "Collection api"
+    },
+    {
+      "name" : "Favorite",
+      "description" : "favorite api"
+    },{
+      "name" : "Auction",
+      "description" : "Auction api"
+    },
+    {
+      "name" : "Faq",
+      "description" : "FAQ api"
+    },
+    {
+      "name" : "Listing",
+      "description" : "Listing api"
+    },
+    {
+      "name" : "Selling-history",
+      "description" : "Selling-history api"
+    },
+    {
+      "name" : "Login",
+      "description" : "Login api"
+    }
+  ],
+  "paths": {
+    "/faq/all": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/faq/add": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/faq/edit": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/country/add": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/country/edit": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/country/all": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/nft/get-top-nft": {
+      "get": {
+        "tags": [
+          "Nft"
+        ],
+        "summary": "get top nft",
+        "description": "It is an API to get top nft",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/nft/top-ten-nft": {
+      "get": {
+        "tags": [
+          "Nft"
+        ],
+        "summary": "get top 10 nfts",
+        "description": "It is an API to get top 10 nfts",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/nft/biggest-collection": {
+      "get": {
+        "tags": [
+          "Nft",
+          "Admin"
+        ],
+        "summary": "get Collection With Biges tNumber Of Nft",
+        "description": "It is an API to get Collection With Biges tNumber Of Nft",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/nft/total-net-worth": {
+      "get": {
+        "tags": [
+          "Nft",
+          "Admin"
+        ],
+        "summary": "get Total Collection Nft Count And Net Worth",
+        "description": "It is an API to get Total Collection Nft Count And Net Worth",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/nft/get-all-nft": {
+      "get": {
+        "tags": [
+          "Nft"
+        ],
+        "summary": "get all nft",
+        "description": "It is an API to get all nft",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/nft/get-last-nft": {
+      "get": {
+        "tags": [
+          "Nft"
+        ],
+        "summary": "get all nft",
+        "description": "It is an API to get all nft",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/nft/create": {
+      "post": {
+        "tags": [
+          "Nft"
+        ],
+        "summary": "add new nft",
+        "description": "It is an API to let admin add new nft",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ownerWalletId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "collectionId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "currentPrice",
+            "in": "formData",
+            "schema": {
+              "type": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/nft/nft/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/nft-info/update": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/nft-info/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/content/{slug}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/login/login": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/top-ten-users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get top ten users",
+        "description": "It is an API to get top ten users",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/user/signup": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Signup user",
+        "description": "It is an API Sign up user that takes all require info to user",
+        "parameters": [
+          {
+            "name": "firstName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "profileImg",
+            "in": "formData",
+            "schema": {
+              "type": "file"
+            }
+          },
+          {
+            "name": "countryId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/verify-email": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "verify email",
+        "description": "It is an API to let user verify his email ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "request.query",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/get-top-sellers": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "get top 3 sellers",
+        "description": "It is an API to get top 3 sellers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/user/get-last-users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "get last 3 users",
+        "description": "It is an API to get last 3 users signed up to the nft marketplace",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/user/get-user-info": {
+      "post": {
+        "tags": [
+          "Users",
+          "Admin"
+        ],
+        "summary": "get user info",
+        "description": "It is an API to let admin to get specific user information by his id ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/forgot-password": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "user forgot password",
+        "description": "It is an API to let user forgot his password",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/reset-password": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "user reset password",
+        "description": "It is an API to let user reset his password",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "verificationToken",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/profile-info": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "get user profile info",
+        "description": "It is an API to let user to get his profile information",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/edit-profile-info": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "edit user profile info",
+        "description": "It is an API to let user edit his profile info",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "firstName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "countryId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "token data",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/users-nft-count": {
+      "get": {
+        "tags": [
+          "Users",
+          "Admin"
+        ],
+        "summary": "get users nft count",
+        "description": "It is an API to let admin to get all users and their nft count",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/change-password": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "change password",
+        "description": "It is an API to let user change his password ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "newPassword",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "token data",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/get-user-nft": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "get user nft",
+        "description": "It is an API to let user get hist nft ",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "walletAddress",
+            "in": "token data",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/nft-collection-count/{wallet}": {
+      "get": {
+        "tags": [
+          "Users",
+          "Admin"
+        ],
+        "summary": "get user nft and collection count",
+        "description": "It is an API to let admin get count of user nft and collection by user wallet address",
+        "parameters": [
+          {
+            "name": "wallet",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "wallet",
+            "in": "request.params",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/collection/top-ten-collections": {
+      "get": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "get top 10 collections",
+        "description": "It is an API to get top 10 collections",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/collection/create": {
+      "post": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "add new collection",
+        "description": "It is an API to let admin add new collection",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "walletId",
+            "in": "formData",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "blockNumber",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/collection/get-collection/{id}": {
+      "get": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "get collection by id",
+        "description": "It is an API to get a collection by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "request.params",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/collection/get-all-collections": {
+      "get": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "get all collections",
+        "description": "It is an API to get all collections",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/collection/get-last-collection": {
+      "get": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "get last collection",
+        "description": "It is an API to get last collection",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/collection/get-user-collection/{id}": {
+      "get": {
+        "tags": [
+          "Collection",
+          "User"
+        ],
+        "summary": "get user collection",
+        "description": "It is an API to let user get his collections",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "request.params",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/admin/login": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/selling-history/user-total-sell/{wallet}": {
+      "get": {
+        "tags": [
+          "Selling-history",
+          "Admin"
+        ],
+        "summary": "get user total sell",
+        "description": "It is an API to get user total sell by wallet address by admin",
+        "parameters": [
+          {
+            "name": "wallet",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "wallet",
+            "in": "request param",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/selling-history/most-expensive-nft": {
+      "get": {
+        "tags": [
+          "Selling-history",
+          "Admin"
+        ],
+        "summary": "get user total sell",
+        "description": "It is an API to get most expensive nft by admin",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/selling-history/three-expansive-nft": {
+      "get": {
+        "tags": [
+          "Selling-history",
+          "Admin"
+        ],
+        "summary": "get three-expansive-nft",
+        "description": "It is an API to get most three-expansive-nft by admin",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/selling-history/user-networth/{wallet}": {
+      "get": {
+        "tags": [
+          "Selling-history",
+          "Admin"
+        ],
+        "summary": "get user net worth",
+        "description": "It is an API to get user total buy by wallet address by admin",
+        "parameters": [
+          {
+            "name": "wallet",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "wallet",
+            "in": "request param",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/favorite/add": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BadRequestResponse": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BadRequest"
+          },
+          {
+            "$ref": "#/components/schemas/ErrorResponse"
+          }
+        ]
+      },
+      "BadRequest": {
+        "description": "API Validation error details",
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "x-obfuscate": false,
+            "items": {
+              "$ref": "#/components/schemas/BadRequestErrorDetail"
+            }
+          }
+        },
+        "required": [
+          "errors"
+        ]
+      },
+      "BadRequestErrorDetail": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "x-obfuscate": false
+          },
+          "dataPath": {
+            "type": "string",
+            "x-obfuscate": false
+          },
+          "schemaPath": {
+            "type": "string",
+            "x-obfuscate": false
+          },
+          "params": {
+            "type": "object",
+            "properties": {
+              "missingProperty": {
+                "type": "string",
+                "x-obfuscate": false
+              }
+            },
+            "x-obfuscate": false
+          },
+          "message": {
+            "type": "string",
+            "x-obfuscate": false
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "description": "Standard error response object.",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Message with error description.",
+            "x-obfuscate": false
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+html
+  head
+    title Verify Your Email Address
+  body(style='font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;')
+    h1(style='margin-top: 0;')welcome ${name}
+    h1(style='margin-top: 0;') Verify Your Email Address
+    p Please click the button below to verify your email address.
+    p If you did not create an account on our site, please ignore this email.
+    a(href=`${activationLink}`, target='_blank', style='display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #4285f4; color: #fff; text-decoration: none; border-radius: 5px;') Verify Email Address
+    p(style='margin-top: 20px;') If the button above doesn't work, copy and paste the following link into your browser:
+    p 
+      a(href=`${activationLink}`, target='_blank', style='color: #4285f4; text-decoration: none;') ${activationLink}

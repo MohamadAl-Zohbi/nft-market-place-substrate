@@ -1,0 +1,191 @@
+#front-header {
+    position: relative;
+    width: 100%;
+    padding: 8px 0;
+    background: linear-gradient( var(--fushia-color) 0%, var(--violette-color) 100% );
+}
+
+#front-header .p-2 {
+  padding: 0 20px;
+}
+
+#front-header .profile {
+  position: relative;
+  cursor: pointer;
+}
+
+#front-header .profile .menu {
+  position: absolute;
+  border-radius: 5px;
+  padding: 10px;
+  width: 180px;
+  top: 30px;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all .3s;
+  background: linear-gradient(#0e0a38 0%, var(--violette-color) 100%);
+  box-shadow: rgb(14 67 84) 0px 0px 5px 0px inset;
+  border: 2px solid #39177e;
+}
+
+#front-header .profile:hover .menu {
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#front-header .menu li {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+#front-header .name {
+  color: white;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+#front-header li,
+.front-nav-mobile ul a {
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-style: italic;
+}
+
+#front-header li:hover,
+.front-nav-mobile li:hover {
+  background: var(--second-color-hover);
+  border-radius: 3px;
+}
+
+#front-header .btn,
+.front-nav-mobile .btn {
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  background: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-style: italic;
+  color: var(--white-color);
+}
+
+#front-header .btn:hover {
+  background: var(--second-color-hover);
+}
+
+#front-header .btn-open-menu {
+  display: none;
+  margin-right: 20px;
+}
+
+.front-nav-mobile .body {
+  padding: 20px 0;
+  background-color: var(--second-color);
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  #front-header .btn-open-menu {
+    display: flex;
+  }
+  #front-header .nav-desktop {
+    display: none;
+  }
+}
+
+.front-nav-mobile .divider {
+  height: 1px;
+  background-color: var(--white-color);
+  margin: 20px 10px;
+}
+
+.front-nav-mobile li {
+  padding: 10px 70px;
+  cursor: pointer;
+}
+
+/* Footer CSS */
+
+#user-footer {
+  width: 100%;
+  background: linear-gradient(
+    var(--fushia-color) 0%,
+    var(--violette-color) 100%
+  );
+  padding: 25px 0;
+}
+
+#user-footer .link {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+#user-footer .link a,
+#user-footer .copy-right p {
+  color: var(--white-color);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#user-footer .link a:hover p,
+#user-footer .icon a:hover {
+  background: var(--second-color-hover);
+  border-radius: 3px;
+}
+
+#user-footer .nfts-information h3 {
+  color: var(--yellow-color);
+  font-family: sans-serif;
+}
+
+#user-footer .subscribe-follow-container {
+  flex-direction: column;
+}
+
+#user-footer .subscribe-follow h3 {
+  color: var(--yellow-color);
+  font-family: math;
+}
+
+#user-footer .subscribe-follow button {
+  color: unset;
+  border: none;
+  background: linear-gradient(#7829e5 20%, #ed06c8 100%);
+  color: var(--white-color);
+  border-radius: 15px;
+  padding: 12px 25px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: .3s;
+}
+
+#user-footer .subscribe-follow button:hover {
+  background: var(--second-color-hover);
+}
+
+@media (max-width: 1024px) {
+  #user-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  #user-footer .copy-right {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #user-footer .footer-content {
+    flex-direction: column;
+  }
+}

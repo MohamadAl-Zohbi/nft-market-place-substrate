@@ -1,0 +1,194 @@
+#home {
+  background: #0e0a38;
+}
+
+#home .title{
+  color: white;
+  font-style: italic;
+  font-size: 16px;
+  margin: 10px;
+}
+
+#home .first-section {
+  position: relative;
+  padding: 50px 30px 50px;
+  background-image: url('../../../assets/images/Header.png');
+  background-size: cover;
+  border-top: 4px solid #FFBB00;
+  border-bottom: 4px solid #FFBB00;
+}
+
+#home .first-section .content {
+  position: relative;
+  width: 100%;
+}
+
+#home .first-section h1{
+  color: var(--yellow-color);
+}
+
+#home .first-section h1 span{
+  color: var(--white-color);
+}
+
+#home .first-section .text{
+  color: var(--white-color);
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    max-width: 650px;
+}
+
+#home .first-section img {
+  position: absolute;
+  width: 300px;
+  right: 0px;
+  top: -85px;
+}
+
+#home .activities {
+  background: var(--primary-color);
+  padding: 30px 10px;
+}
+
+#home .activities h5{
+  position: relative;
+}
+
+#home .activities h5::after{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 250px;
+  height: 3px;
+  border-radius: 12px;
+  background: #15D500;
+}
+
+#home .activity {
+  position: relative;
+  border-radius: 10px;
+  margin: 30px 20px;
+}
+
+#home .activity .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  overflow: hidden;
+  min-height: 130px;
+}
+
+#home .activity .content h3 {
+  font-size: 16px;
+  margin: 40px 5px 10px;
+  color: #fdcb01;
+  text-align: center;
+}
+
+#home .activity .content .text {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  font-weight: 500;
+}
+
+#home .activity .img{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#home .activity .img img{
+  width: 100px;
+}
+
+#home .carousel {
+  margin: 20px 30px;
+}
+
+.nft-items .button-nft {
+  background-image: linear-gradient(var(--fushia-color) 0%, var(--violette-color) 100%);
+  border-radius: 30px;
+  padding: 8px 20px;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.nft-items {
+  padding-bottom: 40px;
+} 
+
+.nft-items .button-nft:hover{
+  transform: translateY(-5px);
+}
+
+.nft-items .table {
+  padding: 25px;
+  background: #ffffff29;
+  border-radius: 15px;
+  margin: 10px;
+  min-width: 600px;
+}
+
+.nft-items .table .row-head, .nft-items .table .row{
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.nft-items .table .row-head .data {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.nft-items .table .row .data {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  
+}
+
+.nft-items .table .data img{
+  width: 30px;
+  margin: 0 10px;
+}
+
+.nft-items .table .data .number{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nft-items .table .data .number img{
+  width: 15px;
+  margin: 0 ;
+}
+
+.nft-items .table .data .percentage{
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  #home .activity {
+    margin: 30px 10px;
+  }
+  #home .first-section img{
+    display: none;
+  }
+}

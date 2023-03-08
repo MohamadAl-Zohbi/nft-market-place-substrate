@@ -1,0 +1,102 @@
+#user-page .user-page-bdg {
+  background-image: url(../../../assets/images/user-page-bgd.png);
+  background-size: cover;
+}
+
+#user-page .genesis-collection {
+  margin: 0 20px;
+}
+
+#user-page .genesis-collection h1 {
+  color: var(--white-color);
+}
+
+#user-page .genesis-collection p {
+  font-style: italic;
+  line-height: 34px;
+  font-weight: 700;
+}
+
+#user-page .genesis-collection-icon {
+  border-radius: 10px;
+  background-color: var(--dark-purple-color);
+  border: 1px solid var(--white-color);
+  padding: 5px;
+  margin-top: 40px;
+}
+
+#user-page .art-block-container h3 {
+  color: var(--yellow-color);
+  margin-bottom: 5px;
+}
+
+#user-page .art-block-container span {
+  color: var(--white-color);
+}
+
+#user-page .block-img img {
+  border: 4px solid var(--yellow-color);
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 5px 8px 95px -13px rgb(255 0 169);
+}
+
+#user-page .button-nft {
+  background-image: linear-gradient(
+    var(--fushia-color) 0%,
+    var(--violette-color) 100%
+  );
+  box-shadow: 0px 0px 5px 1px var(--white-color);
+  border: 1px solid var(--white-color);
+  border-radius: 30px;
+  padding: 5px 35px;
+  color: var(--white-color);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#user-page .content label {
+  font-size: 14px;
+}
+
+#user-page .content span {
+  font-size: 12px;
+}
+
+@media (max-width: 1280px) {
+  #user-page .cointainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1024px) {
+  #user-page .content-search {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 450px) {
+  #user-page .genesis-collection-icon {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #user-page .icon,
+  #user-page .icon-link {
+    gap: 0px;
+  }
+
+  #user-page .genesis-collection {
+    text-align: center;
+  }
+
+  #user-page .content label,
+  #user-page .content span {
+    font-size: 12px;
+  }
+}

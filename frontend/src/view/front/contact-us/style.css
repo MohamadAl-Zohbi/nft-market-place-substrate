@@ -1,0 +1,110 @@
+#contact-us {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(@img/contact-us.png) no-repeat;
+  background-size: cover;
+}
+
+#contact-us .contact-us-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  min-width: 140px;
+  margin: auto;
+  background: var(--primary-color);
+  border: 2px solid var(--blue-link);
+  border-radius: 15px;
+  padding: 70px 90px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#contact-us .contact-us-page h1 {
+  color: var(--white-color);
+  text-align: center;
+}
+
+#contact-us .contact-us-page p {
+  margin-bottom: 50px;
+  color: var(--white-color);
+  font-size: small;
+  line-height: 1.8;
+  text-align: center;
+}
+
+#contact-us .contact-us-email,
+#contact-us .contact-us-message,
+#contact-us .contact-us-name {
+  width: 100%;
+}
+
+#contact-us [type="email"],
+#contact-us [type="name"],
+#contact-us .contact-us-message textarea {
+  border: none;
+  border-bottom: 2px solid var(--blue-link);
+  color: var(--white-color);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.875em 0;
+  padding: 0 0 0.875em 0;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+#contact-us [type="email"]:focus,
+#contact-us [type="name"]:focus,
+#contact-us textarea:focus {
+  outline: none;
+}
+
+#contact-us .contact-us-message textarea {
+  resize: none;
+}
+
+#contact-us .contact-us-email input::placeholder,
+#contact-us .contact-us-name input::placeholder,
+#contact-us .contact-us-message textarea::placeholder {
+  color: var(--blue-link);
+}
+
+#contact-us .contact-us-submit {
+  margin-top: 30px;
+}
+#contact-us .contact-us-submit input[type="submit"] {
+  border: 1px solid var(--white-color);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+#contact-us .contact-us-submit input[type="submit"]:hover {
+  background-color: var(--blue-link);
+}
+
+@media screen and (max-width: 450px) {
+  #contact-us .contact-us-page {
+    padding: 70px 20px;
+  }
+
+  #contact-us .contact-us-container h1 {
+    font-size: 25px;
+  }
+
+  #contact-us .contact-us-container p {
+    font-size: 7px;
+  }
+
+  #contact-us input[type="email"],
+  #contact-us input[type="name"],
+  #contact-us textarea {
+    font-size: 0.875em;
+  }
+}

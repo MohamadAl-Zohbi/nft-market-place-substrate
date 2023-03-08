@@ -1,0 +1,84 @@
+#create-collection-page {
+
+}
+
+.background-image {
+  width: 100%;
+  height: 100%; 
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+#create-collection-page .create-background-image {
+  position: relative;
+  background: var(--light-gray);
+  border: 3px solid var(--black-color);
+  border-radius: 14px;
+  height: 250px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-collection-page .create-profile-image {
+  position: absolute;
+  background: var(--light-gray);
+  border: 3px solid var(--black-color);
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  left: 25px;
+  bottom: -80px;
+  overflow: hidden;
+}
+
+#create-collection-page .create-profile-image .profile-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#create-collection-page .upload-button input {
+  display: none;
+}
+
+#create-collection-page {
+  background-color: var(--light-white-color);
+}
+
+.create-background-image:hover .icon-change-background {
+  opacity: 1;
+}
+
+.create-profile-image:hover .icon-change-profile {
+  opacity: 1;
+}
+
+#create-collection-page .button-nft {
+  background-image: linear-gradient(var(--fushia-color) 0%, var(--violette-color) 100%);
+  box-shadow: 0px 0px 5px 1px #fff;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 5px 35px;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#create-collection-page .textfield-create-nft {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0;
+  align-items: flex-start;
+}
+
+#create-collection-page .textfield-create-nft label{
+  color: black;
+}
+
+
+@media (max-width: 767px) {
+ 
+}

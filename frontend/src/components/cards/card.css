@@ -1,0 +1,64 @@
+.card {
+  position: relative;
+  margin: 25px;
+  padding-top: 12px;
+  border-radius: 10px;
+}
+
+.card .card-body {
+  display: flex !important;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 0px 10px 15px;
+}
+
+.card .card-body .content {
+  padding: 0 10px 15px;
+}
+
+.card .card-image {
+  border-radius: 10px;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  margin: 5px 0;
+}
+
+.card .card-image img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card h6 {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 20px 0 0;
+}
+
+.card label {
+  color: #ffcc00;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.card span {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 550px) {
+  .card h6 {
+    font-size: 14px;
+  }
+  .card label {
+    font-size: 12px;
+  }
+  .card span {
+    font-size: 12px;
+  }
+}

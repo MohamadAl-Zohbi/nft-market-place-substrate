@@ -1,0 +1,61 @@
+import { ApiPromise, WsProvider, Keyring } from "@polkadot/api";
+import { cryptoWaitReady } from "@polkadot/util-crypto";
+import { stringAmountDecimalDecombiner } from "./number-handler";
+import { decodeAddress, encodeAddress } from "@polkadot/keyring";
+import { fundAdmin } from "../blockchain-module/admin";
+import { BN, hexToU8a, isHex } from "@polkadot/util";
+import { NODE_URL } from "./global";
+
+const isPolkadotAddress = (address: string) => {
+  try {
+    encodeAddress(isHex(address) ? hexToU8a(address) : decodeAddress(address));
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+let currentNonce:BN=new BN(-1);
+
+const keyring = new Keyring({ type: "sr25519" });
+// admin phrase
+const PHRASE =
+  "gesture away assist captain depart skate scrap dolphin that fruit later glow";
+var adminPair = null;
+let api = null;
+
+const initialize = async () => {
+  const wsProvider = new WsProvider(NODE_URL);
+  api = await ApiPromise.create({ provider: wsProvider });
+  await cryptoWaitReady();
+  adminPair = keyring.addFromUri(PHRASE);
+  //admin funder
+  api.query.system.account(
+    adminPair.address,
+    ({ data: { free: currentFree } }) => {
+      let amount = stringAmountDecimalDecombiner(currentFree.toString(), 18);
+      if (amount < 0.5 && amount > 0.1) {
+        fundAdmin();
+      }
+    }
+  );
+};
+
+async function userSubmitExtrinsic(submitExtrinsic: {
+  signAndSend: (arg0: any, arg1: { nonce: any }) => any;
+}, phrase:string) {
+ const userPair = keyring.addFromUri(phrase);
+ let nonce = await api.rpc.system.accountNextIndex(userPair.address);
+  return await submitExtrinsic.signAndSend(userPair, {
+    nonce,
+  });
+}
+
+export {
+  api,
+  adminPair,
+  keyring,
+  userSubmitExtrinsic,
+  isPolkadotAddress,
+  initialize,
+};

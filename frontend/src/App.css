@@ -1,0 +1,285 @@
+body {
+  background-color: #f8f9fa;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.loader {
+  position: absolute !important;
+  top: 0px !important;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  z-index: 100000;
+}
+
+.imgFit {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.MuiDataGrid-cell:focus {
+  outline: none !important;
+}
+
+.text-align-left {
+  text-align: start !important;
+}
+
+.text-align-right {
+  text-align: right !important;
+}
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.fs-8 {
+  font-size: 10px;
+}
+
+.fs-10 {
+  font-size: 11px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-21 {
+  font-size: 21px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-36 {
+  font-size: 36px;
+}
+
+.fs-50 {
+  font-size: 50px;
+}
+
+.fs-64 {
+  font-size: 64px;
+}
+
+.fs-84 {
+  font-size: 84px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.column {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.auto-margin {
+  margin: auto;
+}
+
+.nomargin {
+  margin: 0 !important;
+}
+
+.nopadding {
+  padding: 0 !important;
+}
+
+.flex {
+  display: flex;
+  flex: none;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-2 > * {
+  flex-basis: 48%;
+}
+
+.flex-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.flex-col.reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-children > * {
+  flex: 1;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-i-center {
+  align-items: center;
+}
+
+.align-i-start {
+  align-items: flex-start;
+}
+
+.align-i-baseline {
+  align-items: baseline;
+}
+
+.align-i-end {
+  align-items: flex-end;
+}
+
+.align-s-center {
+  align-self: center;
+}
+
+.align-s-start {
+  align-self: flex-start;
+}
+
+.align-s-end {
+  align-self: flex-end;
+}
+
+.title-underline {
+  padding: 0px 0px 10px 0px;
+  border-bottom: 1px solid white;
+  border-width: 2px;
+  color: #fff;
+}
+
+.align-end {
+  text-align: end;
+}
+
+.display-none {
+  display: none;
+}
+
+.gap-1 {
+  gap: 10px;
+}
+
+.gap-2 {
+  gap: 20px;
+}
+
+.gap-3 {
+  gap: 30px;
+}
+
+.gap-4 {
+  gap: 40px;
+}
+
+.gap-5 {
+  gap: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.defaultImageItem {
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+}

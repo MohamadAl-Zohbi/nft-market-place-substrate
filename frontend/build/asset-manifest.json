@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f554c440.css",
+    "main.js": "/static/js/main.2d4b4353.js",
+    "static/js/787.d1b371ce.chunk.js": "/static/js/787.d1b371ce.chunk.js",
+    "static/media/login-image.png": "/static/media/login-image.61e4686f7cfc70f30969.png",
+    "static/media/register-image.png": "/static/media/register-image.1aa898f1855d4a322084.png",
+    "static/media/default-image.png": "/static/media/default-image.781c2661eeb097e22e28.png",
+    "static/media/Header.png": "/static/media/Header.a545b564a792ed3575eb.png",
+    "static/media/project8.png": "/static/media/project8.4cd5d1ccd508736f1d28.png",
+    "static/media/project.png": "/static/media/project.a0a3470ec7a5219715f3.png",
+    "static/media/project3.png": "/static/media/project3.a61a20fb1821f3364e07.png",
+    "static/media/project2.png": "/static/media/project2.0d041045eab1b49b113d.png",
+    "static/media/robot-one.png": "/static/media/robot-one.63bdf31fd06bef126831.png",
+    "static/media/project6.png": "/static/media/project6.9f4bf95f7afc1c00d683.png",
+    "static/media/robot-four.png": "/static/media/robot-four.71846002496fa49392a9.png",
+    "static/media/project7.png": "/static/media/project7.e33b0762e6a4acffdb4b.png",
+    "static/media/project4.png": "/static/media/project4.8ede0a60f5fc13702b77.png",
+    "static/media/user-collection-bgd.png": "/static/media/user-collection-bgd.1a860ca9d1604c9d64c0.png",
+    "static/media/project5.png": "/static/media/project5.5240ac03a57e635ca81e.png",
+    "static/media/AI.png": "/static/media/AI.79c90fdd59aee993bf49.png",
+    "static/media/project1.png": "/static/media/project1.8e7e9eac4556fb1040b7.png",
+    "static/media/robot-three.png": "/static/media/robot-three.214c58297de662b35268.png",
+    "static/media/contact-us.png": "/static/media/contact-us.2a0841edc97358592d17.png",
+    "service-worker.js": "/service-worker.js",
+    "static/media/NFT.png": "/static/media/NFT.ff65e9c8956484120bb7.png",
+    "static/media/nft_sell.png": "/static/media/nft_sell.ed7e018f4fbe60f188f9.png",
+    "static/media/robot-two.png": "/static/media/robot-two.ff583ef01371ac5f5145.png",
+    "static/media/icon.png": "/static/media/icon.fcd8935972bb685c07e9.png",
+    "static/media/user-page-bgd.png": "/static/media/user-page-bgd.5c99e9ebbf99918d0e66.png",
+    "static/media/wallet.png": "/static/media/wallet.960cbf02d0ba6186aaf9.png",
+    "index.html": "/index.html",
+    "main.f554c440.css.map": "/static/css/main.f554c440.css.map",
+    "main.2d4b4353.js.map": "/static/js/main.2d4b4353.js.map",
+    "787.d1b371ce.chunk.js.map": "/static/js/787.d1b371ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f554c440.css",
+    "static/js/main.2d4b4353.js"
+  ]
+}

@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --primary-color: #0e0a38;
+  --second-color: #d90aa5;
+  --second-color-hover: #ff6bda;
+  --fushia-color: #ed06c8;
+  --violette-color: #7829e5;
+  --yellow-color: #ffbb00;
+  --yellow-color-hover: #ffd45e;
+  --white-color: #ffffff;
+  --light-grey: #c5c5c5;
+  --light-gray: #f6f8fa;
+  --black-color: #000000;
+  --dark-blue: #142438;
+  --light-white-color: #d3d9ff;
+  --light-blue: #0063a9;
+  --milky-color: #dfe8ef;
+  --golden-color: #f4c537;
+  --gray: #727c88;
+  --blue-link: #007bff;
+  --blue-link-hover: #0056b3;
+  --text-gray: #000000bd;
+  --background-color: #081160;
+  --btn-blue-hover: #313a84;
+  --purple-hover-color: #a68dff;
+  --purple-color: #977eff;
+  --dark-purple-color: #3e2964;
+}
+
+.container {
+  width: 1600px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textfield-login-register {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.textfield-login-register label {
+  font-size: 14px;
+  color: var(--white-color);
+}
+
+.handle-error {
+  font-size: 12px;
+  color: rgb(228, 41, 41);
+  transform: translate(15px);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffbb00;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bb8900;
+}

@@ -1,0 +1,56 @@
+.table-parent {
+    overflow-x: auto;
+    margin: 40px 0px;
+}
+
+.table-parent .table {
+    padding: 25px;
+    background: #ffffff29;
+    border-radius: 15px;
+    margin: 10px 0;
+    min-width: 600px;
+}
+
+.table-parent .table .row-head,
+.table-parent .table .row {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.table-parent .table .row-head .data {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.table-parent .table .row .data {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+}
+
+.table-parent .table .data img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.table-parent .table .data .number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-parent .table .data .number img {
+    width: 15px;
+    margin: 0;
+}
+
+.table-parent .table .data .percentage {
+    font-size: 12px;
+}

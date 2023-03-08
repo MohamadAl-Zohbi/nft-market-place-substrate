@@ -1,0 +1,31 @@
+#explore {
+  background: #0e0a38;
+}
+
+#explore .title{
+  color: white;
+  font-style: italic;
+  font-size: 16px;
+  margin: 10px;
+}
+
+#explore .button-nft {
+  background-image: linear-gradient(var(--fushia-color) 0%, var(--violette-color) 100%);
+  box-shadow: 0px 0px 5px 1px #fff;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 5px 35px;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .3s;
+}
+
+@media (max-width: 1024px) {
+  .content-search {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+}
